@@ -38,14 +38,16 @@ File.WriteAllText("test.csv", res);
 
 
 
-Console.WriteLine();
 //DESERIALIZE
+Console.WriteLine();
+
 Console.WriteLine("DESERIALIZE");
 Console.WriteLine();
-sw = Stopwatch.StartNew();
 F f = new F();
 
 var text = File.ReadAllText("test.csv");
+sw = Stopwatch.StartNew();
+
 for (int i = 0; i < count; i++)
 {
     f = (F)CustomDeserialization(text, data.GetType());
@@ -62,17 +64,6 @@ for (int i = 0; i < count; i++)
 sw.Stop();
 elapsedDEFAULT = sw.Elapsed;
 Console.WriteLine("Default des.: " + elapsedDEFAULT.Milliseconds + "ms.");
-
-
-
-
-
-
-
-
-
-
-
 
 
 
